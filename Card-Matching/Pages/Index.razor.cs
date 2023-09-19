@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Share.Model.Card;
 
 namespace CardMatching.Pages
@@ -11,7 +12,11 @@ namespace CardMatching.Pages
 
         bool _isChecking = false;
 
-        protected override void OnInitialized()
+        GameStatus _gameState = GameStatus.Started;
+
+		bool isPause;
+		
+		protected override void OnInitialized()
         {
             _deck.CreateDeck();
         }
@@ -49,11 +54,44 @@ namespace CardMatching.Pages
 
                 _deck.ChangeCardStatus(card.Id, status);
             }
+
+            if (IsGameOver())
+            {
+                _gameState = GameStatus.Over;
+
+                ToggleOverlay();
+            }
+        }
+
+        public bool IsGameOver()
+        {
+            return !_deck.Cards.Any(card => card.Status != CardStatus.Matched);
         }
 
         public void Refresh()
         {
             _deck.CreateDeck();
+
+            if (isPause)
+            {
+                ToggleOverlay();
+            }
+        }
+
+        public void Pause()
+        {
+            var isGamePaused = _gameState == GameStatus.Paused;
+
+			_gameState = isGamePaused ? GameStatus.Started : GameStatus.Paused;
+
+            ToggleOverlay();
+
+            StateHasChanged();
+        }
+
+        public void ToggleOverlay()
+        {
+            isPause = !isPause;
         }
     }
 
@@ -61,6 +99,6 @@ namespace CardMatching.Pages
     {
         Started,
         Paused,
-        Finished
+        Over
     }
 }

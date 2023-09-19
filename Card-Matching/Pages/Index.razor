@@ -3,6 +3,7 @@
 <MudGrid>
 	<MudItem xs="12" Class="d-flex align-center justify-center">
 		<MudIconButton @onclick="Refresh" Size="Size.Large" Icon="@Icons.Material.Filled.Refresh"></MudIconButton>
+		<MudIconButton @onclick="Pause" Size="Size.Large" Icon="@Icons.Material.Filled.Pause"></MudIconButton>
 	</MudItem>
 	@foreach (var item in _deck.Cards)
 	{
@@ -14,3 +15,10 @@
 	}
 </MudGrid>
 
+<MudOverlay @bind-Visible="isPause" DarkBackground="true" Absolute="true">
+	<MudIconButton @onclick="Refresh" Size="Size.Large" Icon="@Icons.Material.Filled.Refresh"></MudIconButton>
+	@if (_gameState != GameStatus.Over)
+	{
+		<MudIconButton @onclick="Pause" Size="Size.Large" Icon="@Icons.Material.Filled.PlayArrow"></MudIconButton>
+	}
+</MudOverlay>

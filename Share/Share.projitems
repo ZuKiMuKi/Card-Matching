@@ -9,7 +9,7 @@
     <Import_RootNamespace>Share</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Card\CardModel.cs" />
+    <Compile Include="..\Share\Model\Card\Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Card\Deck.cs" />
   </ItemGroup>
 </Project>
