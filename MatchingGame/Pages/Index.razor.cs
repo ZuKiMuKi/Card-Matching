@@ -1,4 +1,4 @@
-﻿using Share.Model.Card;
+﻿using MatchingGame.Shared.Model;
 
 namespace MatchingGame.Pages
 {
