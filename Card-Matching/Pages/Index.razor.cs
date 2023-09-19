@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Share.Model.Card;
+﻿using Share.Model.Card;
 
-namespace CardMatching.Pages
+namespace MatchingGame.Pages
 {
     public partial class Index
     {
