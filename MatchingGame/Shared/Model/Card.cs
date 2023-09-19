@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Share.Model.Card
+namespace MatchingGame.Shared.Model
 {
     public class Card
     {

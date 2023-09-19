@@ -1,10 +1,10 @@
-﻿namespace Share.Model.Card
+﻿namespace MatchingGame.Shared.Model
 {
     public class Deck
     {
         public List<Card> Cards { get; set; }
         private string[] CardFaces { get; set; }
-        public Deck(string[] cardFace) 
+        public Deck(string[] cardFace)
         {
             Cards = new List<Card>();
             CardFaces = cardFace;
@@ -43,7 +43,7 @@
             return true;
         }
 
-        public List<Card> GetOpenedCards() 
+        public List<Card> GetOpenedCards()
         {
             return Cards.Where(card => card.Status == CardStatus.Open).ToList();
         }
