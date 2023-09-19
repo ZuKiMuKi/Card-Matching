@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CardMatching.Pages;
-
-namespace Share.Model.Card
+﻿namespace Share.Model.Card
 {
     public class Deck
     {

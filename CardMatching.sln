@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardMatching", "Card-Matching\CardMatching.csproj", "{75030D72-84E6-4B23-BC9F-2ED932FAAF24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatchingGame", "Card-Matching\MatchingGame.csproj", "{75030D72-84E6-4B23-BC9F-2ED932FAAF24}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Share", "Share\Share.shproj", "{7B0B3D8C-D53C-4AF7-914D-C80969D5E68C}"
 EndProject
